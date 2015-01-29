@@ -1,6 +1,22 @@
-your-heroku-app-name:
-  slack: https://other.slack.com/services/hooks/heroku?token=INTENTIONALLY_LEFT_BLANK
-  appsignal: https://push.appsignal.com/1/markers/heroku?api_key=INTENTIONALLY_LEFT_BLANK
-  honeybadger: https://api.honeybadger.io/v1/deploys?deploy[environment]=production&api_key=INTENTIONALLY_LEFT_BLANK
-another-heroku-app-name:
-  honeybadger: https://api.honeybadger.io/v1/deploys?deploy[environment]=staging&api_key=INTENTIONALLY_LEFT_BLANK
+busyconf:
+  honeybadger: https://api.honeybadger.io/v1/deploys?deploy[environment]=production&api_key=<%=ENV['BUSYCONF_HONEYBADGER_API_KEY']%>
+  slack: https://busyconf.slack.com/services/hooks/heroku?token=<%=ENV['BUSYCONF_SLACK_TOKEN']%>
+
+busyconf-staging:
+  honeybadger: https://api.honeybadger.io/v1/deploys?deploy[environment]=staging&api_key=<%=ENV['BUSYCONF_HONEYBADGER_API_KEY']%>
+  slack: https://busyconf.slack.com/services/hooks/heroku?token=<%=ENV['BUSYCONF_SLACK_TOKEN']%>
+
+busyconf-camo:
+  slack: https://busyconf.slack.com/services/hooks/heroku?token=<%=ENV['BUSYCONF_SLACK_TOKEN']%>
+
+# so meta
+busyconf-deploy-hooks:
+  slack: https://busyconf.slack.com/services/hooks/heroku?token=<%=ENV['BUSYCONF_SLACK_TOKEN']%>
+
+chargestack:
+  rollbar: https://api.rollbar.com/api/1/deploy/?access_token=<%=ENV['CHARGESTACK_ROLLBAR_TOKEN']%>&environment=production
+  slack: https://busyconf.slack.com/services/hooks/heroku?token=<%=ENV['CHARGESTACK_SLACK_TOKEN']%>
+
+chargestack-staging:
+  rollbar: https://api.rollbar.com/api/1/deploy/?access_token=<%=ENV['CHARGESTACK_ROLLBAR_TOKEN']%>&environment=staging
+  slack: https://busyconf.slack.com/services/hooks/heroku?token=<%=ENV['CHARGESTACK_SLACK_TOKEN']%>
