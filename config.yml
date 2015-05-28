@@ -1,9 +1,9 @@
 busyconf:
-  honeybadger: https://api.honeybadger.io/v1/deploys?deploy[environment]=production&api_key=<%=ENV['BUSYCONF_HONEYBADGER_API_KEY']%>
+  rollbar: https://api.rollbar.com/api/1/deploy/?access_token=<%=ENV['BUSYCONF_ROLLBAR_TOKEN']%>&environment=production
   slack: https://busyconf.slack.com/services/hooks/heroku?token=<%=ENV['BUSYCONF_SLACK_TOKEN']%>
 
 busyconf-staging:
-  honeybadger: https://api.honeybadger.io/v1/deploys?deploy[environment]=staging&api_key=<%=ENV['BUSYCONF_HONEYBADGER_API_KEY']%>
+  rollbar: https://api.rollbar.com/api/1/deploy/?access_token=<%=ENV['BUSYCONF_ROLLBAR_TOKEN']%>&environment=staging
   slack: https://busyconf.slack.com/services/hooks/heroku?token=<%=ENV['BUSYCONF_SLACK_TOKEN']%>
 
 busyconf-camo:
